@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+  <header>
+    <h1>Web News</h1>
+    <p>O seu portal de notícias na web</p>
+    <nav>
+      {% include 'navbar.html' %}
+    </nav>
+  </header>
+  
+  <div>
+    {%for n in noticias%}
+      <h3>{{n.titulo}}</h3>
+      <h4>{{n.autor}}</h4>
+      <p>{{n.materia}}</p>
+    {%endfor%}
+  </div>
+  
+</body>
+</html>
