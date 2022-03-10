@@ -14,13 +14,7 @@
     </nav>
   </header>
   
-  <div>
-    {%for n in noticias%}
-      <h3>{{n.titulo}}</h3>
-      <h4>{{n.autor}}</h4>
-      <p>{{n.materia}}</p>
-    {%endfor%}
-  </div>
+  {% include 'noticias.html' %}
   
 </body>
 </html>
