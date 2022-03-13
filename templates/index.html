@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Hello World!</title>
-  <link rel="stylesheet" href="../static/css/index.css">
-</head>
-<body>
-  {% include 'header.html' %}
-  
+{% extends 'template.html'%}
+
+{%block head%}
+
+{%endblock%}
+
+{%block body%}
   {% include 'noticias.html' %}
-  
-</body>
-</html>
+{%endblock%}

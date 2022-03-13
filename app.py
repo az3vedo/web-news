@@ -25,10 +25,10 @@ env = Environment(
 @app.route("/")
 def home():
   template = env.get_template("index.html")
-  return render_template(template, noticias=noticias)
+  return render_template(template, noticias=noticias, page={"title":"Web News"})
 
 @app.route("/categorias")
 def category():
   template = env.get_template("categorias.html")
-  return render_template(template)
+  return render_template(template, page={"title":"Categorias"})
 
