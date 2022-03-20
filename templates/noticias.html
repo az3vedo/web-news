@@ -1,8 +1,12 @@
 <div class="bloco-noticias">
-  {% for n in noticias %}
-    <h3>{{n.titulo}}</h3>
-    <h4>{{n.autor}}</h4>
-    <h5>{{n.categoria}}</h5>
-    <p>{{n.materia}}</p>
-  {% endfor %}
+  {%if not noticias%}
+    <p>Não foram encontradas notícias que atendam à sua busca :(</p>
+  {%else%}
+    {% for n in noticias %}
+      <h3>{{n.titulo}}</h3>
+      <h4>{{n.autor}}</h4>
+      <h5>{{n.categoria}}</h5>
+      <p>{{n.materia}}</p>
+    {% endfor %}
+  {%endif%}
 </div>
