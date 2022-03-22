@@ -1,14 +1,12 @@
 import os
+import sys
 
-# set FLASK_APP=app
-# set FLASK_ENV=%1
+try:
+    env = sys.argv[1]
+except:
+    env = "production"
 
-os.environ['FLASK_APP']=app
-os.environ['FLASK_ENV']=sys.argv[1] | "production"
-os.system('pip install - r ./requirements.txt')
-# if (os.name == "nt"):
-    
-# elif (os.name == "unix"):
-
-# else:
-#     print("Erro: Sistema Operacional inválido")
+os.environ['FLASK_APP']="app"
+os.environ['FLASK_ENV']=env
+os.system('pip install -r ./requirements.txt')
+os.system('flask run')
