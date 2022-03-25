@@ -26,15 +26,8 @@ Portal de notícias
   ```
  - Execução do projeto
   ```bash
-  # Linux
-   sudo chmod +x setup.sh
-   ./setup.sh
-  # Windows
-   setup.bat
+  python setup.py
    
-  # ambos os scripts iniciarão o projeto com o ambiente de produção, para utilizar o ambiente de dev adicione o argumento "development": 
-  # Linux
-   ./setup.sh development
-  # Windows
-   setup.bat development
+  # o setup iniciara o projeto com o ambiente de produção, para utilizar o ambiente de dev adicione o argumento "development": 
+   python setup.py development
  ```
