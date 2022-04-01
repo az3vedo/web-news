@@ -1,14 +1,14 @@
 from flask import Flask, render_template
 from jinja2 import Environment, PackageLoader, select_autoescape
+from waitress import serve
 
 # Informações de execução, não alterar
-
 PORT=5001
 app = Flask(__name__)
 if(__name__=='__main__'):
-  app.run('0.0.0.0', port=PORT)
+  serve(app, host='0.0.0.0', port=PORT)
 
-#######################################
+# Mock de dados, apagar assim que o banco de dados for implementado
 noticias = [
             {
               "titulo": "Time da cidade passa para as semi-finais!",
