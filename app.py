@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from jinja2 import Environment, PackageLoader, select_autoescape
-
+from services.api import Api
 
 app = Flask(__name__)
 noticias = [
@@ -37,6 +37,7 @@ env = Environment(
 
 @app.route("/")
 def home():
+  noticias = Api.getNoticias()
   template = env.get_template("index.html")
   return render_template(template, noticias=noticias, page={"title":"Web News"})
 
