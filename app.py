@@ -43,10 +43,12 @@ def home():
 
 @app.route("/categorias")
 def category():
+  categorias = Api.getAssuntos()
   template = env.get_template("categorias.html")
   return render_template(template,categorias=categorias, page={"title":"Categorias"})
 
-@app.route("/categorias/<categoria>")
-def show_category(categoria):
+@app.route("/noticias_categorias/<id>")
+def show_noticias_by_categorias(id):
+  noticias = Api.getNoticiasByAssunto(id)
   template = env.get_template("index.html")
-  return render_template(template,noticias=select_article_category(categoria), page={"title":"Notícias"})
+  return render_template(template,noticias=noticias, page={"title":"Notícias"})
