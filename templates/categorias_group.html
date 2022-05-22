@@ -1,7 +1,7 @@
 <div class="categorias">
   <ul>
     {% for c in categorias %}
-    <li><a href="/categorias/{{c}}">{{c}}</a></li>
+    <li><a href="/noticias_categorias/{{c.id}}">{{c.assunto}}</a></li>
     {%endfor%}
   </ul>
 </div>
