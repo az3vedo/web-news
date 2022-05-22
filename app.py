@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from jinja2 import Environment, PackageLoader, select_autoescape
-
+from services.api import Api
 
 app = Flask(__name__)
 noticias = [
@@ -37,15 +37,18 @@ env = Environment(
 
 @app.route("/")
 def home():
+  noticias = Api.getNoticias()
   template = env.get_template("index.html")
   return render_template(template, noticias=noticias, page={"title":"Web News"})
 
 @app.route("/categorias")
 def category():
+  categorias = Api.getAssuntos()
   template = env.get_template("categorias.html")
   return render_template(template,categorias=categorias, page={"title":"Categorias"})
 
-@app.route("/categorias/<categoria>")
-def show_category(categoria):
+@app.route("/noticias_categorias/<id>")
+def show_noticias_by_categorias(id):
+  noticias = Api.getNoticiasByAssunto(id)
   template = env.get_template("index.html")
-  return render_template(template,noticias=select_article_category(categoria), page={"title":"Notícias"})
+  return render_template(template,noticias=noticias, page={"title":"Notícias"})
