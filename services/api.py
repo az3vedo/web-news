@@ -13,3 +13,14 @@ class Api:
     url = f"{host}/noticias/{id}"
     data = requests.get(url)
     return(data.json())
+
+  def getAssuntos():
+    url = f"{host}/assuntos/"
+    data = requests.get(url)
+    return(data.json())
+  
+  def getNoticiasByAssunto(id):
+    url = f"{host}/noticias/assuntos/{id}"
+    data = requests.get(url)
+    print(data)
+    return(data.json())
