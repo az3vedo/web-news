@@ -52,3 +52,6 @@ def show_noticias_by_categorias(id):
   noticias = Api.getNoticiasByAssunto(id)
   template = env.get_template("index.html")
   return render_template(template,noticias=noticias, page={"title":"Notícias"})
+
+if __name__ == '__main__':
+  app.run()
